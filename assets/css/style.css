@@ -118,6 +118,18 @@ footer {
   border: 1px solid #ddd;
 }
 
+
+.sidebars {
+  float: left;
+  width: 100%;
+  max-width: 270px;
+  padding: 30px;
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+
 h3,
 .sidebar h2 {
   padding-bottom: 20px;
@@ -125,6 +137,16 @@ h3,
   line-height: 22px;
   border-bottom: 2px solid #eee;
 }
+
+
+h3,
+.sidebars h2 {
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  line-height: 22px;
+  border-bottom: 2px solid #eee;
+}
+
 
 .social {
   width: 62px;

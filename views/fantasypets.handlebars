@@ -1,0 +1,122 @@
+<div class="container-fluid">
+
+    
+    <!-- row2 page body -->
+	<div class="row">
+        <!-- spacer left -->
+		<div class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+        </div>
+        <!-- end spacer left -->
+
+        <!-- inner box -->		
+        <section class="col-xs-12 col-sm-10 col-md-8 col-lg-8 jumbotron card card-block py-4">
+            <h1>
+                Fantasy Pets Galore!
+            </h1>
+            <!-- instructions -->
+            <p>
+                Fantastic Pets of All Flavours Below!
+            </p>
+            <!-- end instructions -->
+            
+            <hr>
+
+            <!-- form -->
+            <form action="submit" method="post" id="create-cat-form" class="create-cat">
+                <div class="form-group">
+                    <label for="new-name">Want to Add a Fantastic Pet?</label>
+                    <input type="text" class="form-control" id="new-name" name="new-name" placeholder="Pet's Name" />
+                </div>
+                <button type="submit" class="btn btn-primary py-md-2 px-md-4">Submit</button>
+            </form>
+            <!-- end form -->
+
+                
+            <hr>
+        
+            <!-- cards - List of FPETS -->
+            <div class="row ">
+              {{!-- BEGIN #EACH SECTION HERE  --}}
+              {{#each cats}}
+                {{#if pet_or_not}}
+                {{!-- meaning: if ADOPTED or not evaluates to true meaning the FPET has been ADOPTED, print this --}}
+                   {{!-- Hi! This FPET has been ADOPTED! This code section works! --}}
+                   {{!-- single FPET card --}}
+                    <div class="col-md-4">
+                        <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
+                            <h2 class="card-title py-md-3 px-md-4">
+                                {{ cat_name }}
+                            </h2>
+
+                            <img class="card-img" alt="FPET to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                            <p class="card-title px-md-2">You have chosen to adopt this creature! <br>Please Contact Us for further instructions!</p>
+                            <button type="submit" class="btn btn-been-pet py-md-2 px-md-4 pet-the-cat" data-id="{{id}}" data-pet-state="{{pet_or_not}}">I'm bored again...</button>
+                        </div>
+                    </div>
+                    {{!-- END single FPET card --}}
+                {{else}}
+                {{!-- meaning: if pet or not evaluates to false meaning the cat has not been pet, print this --}}
+                   {{!-- Hi! This Cat hasn't been pet! This code section works! --}}
+                    {{!-- single cat card --}}
+                    <div class="col-md-4">
+                        <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
+                            <h2 class="card-title py-md-3 px-md-4">
+                                {{ cat_name }}
+                            </h2>
+
+                            {{!--NOTE: THIS IS WHERE WE WANT TO FANTASY ANIMAL PICS TO GENERATE!--}}
+                            <img class="card-img" alt="cat to pet" src="https://placekitten.com/280/200?image={{id}}" />
+                            {{!--NOTE: THIS IS WHERE WE WANT TO FANTASY ANIMAL PICS TO GENERATE!--}}
+
+                            <button type="submit" class="btn btn-primary py-md-2 px-md-4 pet-the-cat" data-id="{{id}}" data-pet-state="{{pet_or_not}}">Adopt Me!</button>
+                        </div>
+                    </div>
+                    {{!-- END single FPET card --}}
+                {{/if}}
+
+                
+                {{/each}}
+              {{!-- END #EACH SECTION HERE  --}}
+
+            </div>
+            <!-- end cards - List of Cats -->
+        
+        </section>
+        <!-- end inner box -->
+            
+        <!-- spacer right -->
+        <div class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+        </div>
+        <!-- end spacer right -->
+    </div>
+        <!-- end row2 page body -->
+
+        <!-- row3 footer -->
+        <footer class="row">
+            <p class="col-md-12 p-md-2 m-md-1">
+                Copyright &copy; The Amazons
+            </p>     
+        </footer>
+        <!-- end row3 footer -->
+
+</div>
+
+{{!-- <div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Example</h5>
+          <p>
+            <strong>ID</strong>: {{example.id}}</p>
+          <p>
+          <p>
+            <strong>Text</strong>: {{example.text}}</p>
+          <p>
+            <strong>Description:</strong> {{example.description}}</p>
+            <a href="/">← Back To Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> --}}

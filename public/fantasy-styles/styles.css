@@ -2,7 +2,7 @@ h1 {
   font-family: 'Eczar';
   font-weight: bold;
   font-size: 200%;
-  color: rgb(255, 242, 169);}
+  color: rgb(255, 242, 169);
 }
 
 h3 {
@@ -39,8 +39,9 @@ h3 {
   background-color: 
       -webkit-gradient(linear, 
       0 top, 100% top, 
-      from( rgb(255, 242, 169, 0.9), 
-      to( rgb(255, 242, 169, 0.0001)));
+      from( rgb(255, 242, 169, 0.9)), 
+      to( rgb(255, 242, 169, 0.0001))
+      );
 }
 
 .carouselp {

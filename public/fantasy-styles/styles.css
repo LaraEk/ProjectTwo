@@ -1,0 +1,80 @@
+h1 {
+  font-family: 'Eczar';
+  font-weight: bold;
+  font-size: 200%;
+  color: rgb(255, 242, 169);
+}
+
+h3 {
+  font-family: 'Eczar';
+  font-weight: bold;
+  font-size: 200%;
+  color: rgb(255, 242, 169);
+}
+
+.navbar {
+  background-color: rgb(255, 242, 169, .5);
+  font-family: 'Eczar';
+  font-size: 150%;
+}
+
+.navbar-brand {
+  margin: 5px;
+  font-family: 'Eczar';
+  font-size: 150%;
+}
+
+
+.jumbotron {
+  color: rgb(255, 242, 169);
+  text-align: center;
+  font-family: 'Eczar';
+  font-weight: bold;
+  font-size: 600%;
+  padding: 5px;
+  margin: 5spx;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-color: 
+      -webkit-gradient(linear, 
+      0 top, 100% top, 
+      from( rgb(255, 242, 169, 0.9)), 
+      to( rgb(255, 242, 169, 0.0001))
+      );
+}
+
+.carouselp {
+  font-family: 'Eczar';
+  color: #39f7ce;
+  font-size: 25px;
+}
+
+/*why won't it create borders around these divs like it's supposed to??? maybe I can fix in main clone.*/
+#adoptdiv {
+  background-color: rgb(255, 242, 169, .5);
+  outline: 2px rgb(255, 242, 169), dashed;
+  border-width: 2px;
+  border-style: dashed;
+}
+
+/*why won't it create borders around these divs like it's supposed to??? maybe I can fix in main clone.*/
+#backtorealanimalsdiv {
+  margin: 0px, 10px, 0px, 10px;
+  border-width: 2px;
+  border-style: dashed;
+  border-color:#18494d;
+  padding: 15px;
+  line-height: 25px;
+
+}
+
+/*why won't it create borders around these divs like it's supposed to??? maybe I can fix in main clone.*/
+#contactdiv {
+  background-color: rgb(255, 242, 169);
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}

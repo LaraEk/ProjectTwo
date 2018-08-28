@@ -6,7 +6,7 @@ var sequelize = require("../config/connection.js");
 //Create the model for the fantasy animals table that matches with the DB
 var Fantasy_Animals = sequelize.define("fantasy_animals",{
     //the ID for each animal (an integer)
-    id: Sequelize.INTEGER,
+    id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
     //the name of the animal (a string)
     name: Sequelize.STRING,
     //the picture of the pet (a blob)

@@ -1,8 +1,8 @@
-var db = require("../models");
+var db = require("../models/real_pets");
 
 // Dependencies
 // =============================================================
-var RealPet = require("../models/real_pets.js");
+var RealPet = require("../models/real_pets");
 
 // Routes
 // =============================================================

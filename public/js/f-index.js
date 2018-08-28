@@ -40,7 +40,7 @@ $(function() {
           updatedAdoptedState = 0;
       };
 
-      var ajaxUrl = "/api/cats/pet_or_not/" + updatedAdoptedState + "/" + creatureId;
+      var ajaxUrl = "/api/creatures/adopted_or_not/" + updatedAdoptedState + "/" + creatureId;
           //this sets pet_or_not to true or false (0 or 1) for the id given
 
       // Send the PUT request.

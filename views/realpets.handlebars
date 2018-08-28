@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    
+	<div class="row">
+		<!--spacer--><div class="col-xs-0 col-sm-1 col-md-2 col-lg-2"></div>
+
+        <section class="col-xs-12 col-sm-10 col-md-8 col-lg-8 jumbotron card card-block py-4">
+            <h1>
+                Pets Galore!
+            </h1>
+            <p>
+                Adopt A Pet Below!
+            </p>            
+
+            <hr>
+
+            <!-- form -->
+            <form action="submit" method="post" id="create-pet-form" class="create-pet">
+                <div class="form-group">
+                    <label for="new-name">Want to Add a Pet?</label>
+                    <input type="text" class="form-control" id="new-name" name="new-name" placeholder="Pet Name" />
+                </div>
+                <button type="submit" class="btn btn-primary py-md-2 px-md-4">Submit</button>
+            </form>
+            <!-- end form -->
+                
+            <hr>
+
+            <div class="row ">
+              {{#each real_animals}}
+                {{#if adopted}}
+                {{!-- If PET has been ADOPTED: this is what happens --}}
+                       {{!-- single PET card --}}
+                    <div class="col-md-4">
+                        <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
+                            <h2 class="card-title py-md-3 px-md-4">
+                                {{ pet_name }}
+                            </h2>
+
+                            <img class="card-img" alt="PET to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                            <p class="card-title px-md-2">You have chosen to adopt this pet! <br>Please Contact Us for further instructions!</p>
+                            <button type="submit" class="btn py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">I already have a home!</button>
+                        </div>
+                    </div>
+                    {{!-- END single PET card --}}
+
+                {{else}}
+                {{!-- If PET has !NOT! been ADOPTED: this is what happens --}}
+                    <div class="col-md-4">
+                        <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
+                            <h2 class="card-title py-md-3 px-md-4">
+                                {{ pet_name }}
+                            </h2>
+                            <img class="card-img" alt="cat to pet" src="https://placekitten.com/280/200?image={{id}}" />
+                            <button type="submit" class="btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Adopt Me!</button>
+                        </div>
+                    </div>
+                    {{!-- END single CCREATURE card --}}
+                {{/if}}
+
+                
+                {{/each}}
+              {{!-- END #EACH SECTION HERE  --}}
+
+            </div>
+        
+        </section>
+            
+        <!--spacer--><div class="col-xs-0 col-sm-1 col-md-2 col-lg-2"></div>
+
+    </div> <!-- end row2 page body -->
+
+    <footer class="container-fluid text-center">
+        Copyright &copy; 2018 The Amazons
+    </footer>
+
+</div>

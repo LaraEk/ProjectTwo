@@ -26,7 +26,13 @@ var Fantasy_Animals = sequelize.define("fantasy_animals",{
     //determine if the animal has been adopted or not (a boolean)
     adopted: Sequelize.BOOLEAN
     
-});
+}
+,
+// don't add the timestamp attributes (updatedAt, createdAt)- Sequelize settings argument/parameters
+{
+    timestamps: false
+}
+);
 
 // Syncs with DB
 Fantasy_Animals.sync();

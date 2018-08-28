@@ -25,7 +25,12 @@ var Real_Pets = sequelize.define("real_pets",{
     adopted: Sequelize.BOOLEAN,
     //the picture of the pet (a blob)
     pic: Sequelize.BLOB
-});
+},
+// don't add the timestamp attributes (updatedAt, createdAt)
+{
+    timestamps: false
+}
+);
 
 // Syncs with DB
 Real_Pets.sync();

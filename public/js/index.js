@@ -1,99 +1,60 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+$(function() {
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
+  // // note: /api/realpet/:petid?"
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+  //Create new creature entry function
+  $(".create-creature").on("submit", function(event) {
+      event.preventDefault();
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
+      var newCreatureName = $("#new-name").val().trim();
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+      var ajaxUrl = "/api/creatures/" + newCreatureName;
 
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
+      // Send the POST request.
+      $.ajax(ajaxUrl, {
+          type: "POST"
+      }).then(
+          function() {
+          // console.log("Success! Added new CREATURE to the database.");
+          // Reload the page to get the updated list
+          location.reload();
+          document.getElementById("create-creature-form").reset();
+          }
+      );
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
+  //Update function 1 - update whether cat wants to be pet "pet_or_not"
+  $(".adopt-the-creature").on("click", function(event) {
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+      var creatureId = $(this).data("id");
+      var adoptedState = $(this).data("adopted-state");
+      var updatedAdoptedState = null;
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+      //checks current pet state of cat and reverses it for update- pets the cat when clicking "Mrow! Pet Meee!!!", or other button will say "the cat is bored again" for toggling the cat back to pettable
+      if (adoptedState == 0) {
+          updatedAdoptedState = 1;
+      } else if(adoptedState == 1) {
+          updatedAdoptedState = 0;
+      } else {
+          console.log("Problem! Defaulting to 0.");
+          updatedAdoptedState = 0;
+      };
+
+      var ajaxUrl = "/api/cats/pet_or_not/" + updatedAdoptedState + "/" + creatureId;
+          //this sets pet_or_not to true or false (0 or 1) for the id given
+
+      // Send the PUT request.
+      $.ajax(ajaxUrl, {
+          type: "PUT"
+      }).then(
+          function() {
+          // console.log("Success! Updated cat pet_or_not state to opposite value.");
+          // Reload the page to get the updated list
+          location.reload();
+          }
+      );
   });
-};
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+  //Update function 2 - update name of cat- optional addition later
+
+  });

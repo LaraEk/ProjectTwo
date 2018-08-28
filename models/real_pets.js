@@ -8,7 +8,7 @@ var sequelize = require("../config/connection.js");
 
 var Real_Pets = sequelize.define("real_pets",{
     //the ID for each pet (an integer)
-    id: Sequelize.INTEGER,
+    id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
     //the name of the pet (a string)
     pet_name: Sequelize.STRING,
     //the breed of the animal (a string)
@@ -25,7 +25,12 @@ var Real_Pets = sequelize.define("real_pets",{
     adopted: Sequelize.BOOLEAN,
     //the picture of the pet (a blob)
     pic: Sequelize.BLOB
-});
+},
+// don't add the timestamp attributes (updatedAt, createdAt)
+{
+    timestamps: false
+}
+);
 
 // Syncs with DB
 Real_Pets.sync();

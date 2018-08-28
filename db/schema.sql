@@ -37,7 +37,7 @@ CREATE TABLE fantasy_animals(
 	age INT(5) NOT NULL,
 	size_in_feet INT(5.5) NOT NULL,
 	temperament VARCHAR(50) NOT NULL,
-	price INT(20.3) NOT NULL,
+	price DECIMAL(20.3) NOT NULL,
 	from_where VARCHAR(255) NOT NULL,
 	matching_real_animal VARCHAR(50) NOT NULL,
 	adopted BOOLEAN DEFAULT false,

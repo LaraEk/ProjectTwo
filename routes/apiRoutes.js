@@ -1,12 +1,36 @@
 var db = require("../models");
 
+// Dependencies
+// =============================================================
+var RealPet = require("../models/real_pets.js");
+
+// Routes
+// =============================================================
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+  // Search for Specific Pet (or all pets) then provides JSON
+  app.get("/api/realpet/:petid?", function(req, res) {
+    // If the user provides a specific pet in the URL...
+    if (req.params.petid) {
+      // Then display the JSON for ONLY that pet.
+      // (Note how we're using the ORM here to run our searches)
+      RealPet.findOne({
+        where: {
+          id: req.params.petid
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    }
+    else {
+      // Otherwise...
+      // Otherwise display the data for all of the pets.
+      // (Note how we're using Sequelize here to run our searches)
+      RealPet.findAll({}).then(function(result) {
+        return res.json(result);
+      });
+    }
   });
+
 
   // Create a new example
 //   app.post("/api/examples", function(req, res) {
@@ -21,4 +45,4 @@ module.exports = function(app) {
 //       res.json(dbExample);
 //     });
 //   });
-// };
+};

@@ -1,7 +1,41 @@
-$(function() {
+// var data = require("../../routes/apiRoutes");
+
+$(document).ready(function() {
 
     // // note: /api/realpet/:petid?"
-  
+
+        // GET ALL function
+//  function getAllPets() {
+    $.get("/api/realpet", function(data) {
+        // var hbsObject = {
+        //     pets: data
+        // };
+        // data.render("realpets", hbsObject);
+//    });
+    console.log(data);
+    });
+
+//  getAllPets();
+
+    //     $.ajax(ajaxUrl, {
+    //     type: "POST"
+    // }).then(
+    //     function() {
+    //     // console.log("Success! Added new CREATURE to the database.");
+    //     // Reload the page to get the updated list
+    //     location.reload();
+    //     document.getElementById("create-pet-form").reset();
+    //     }
+        
+    // $.get("/api/realpet", function(data) {
+    //     var hbsObject = {
+    //         pets: data
+    //     };
+    //     data.render("realpets", hbsObject);
+    //     console.log(data);
+    // });
+
+
     //Create new creature entry function
     $(".create-pet").on("submit", function(event) {
         event.preventDefault();
@@ -23,6 +57,7 @@ $(function() {
         );
     });
   
+
     //Update function 1 - update whether cat wants to be pet "pet_or_not"
     $(".adopt-the-creature").on("click", function(event) {
   

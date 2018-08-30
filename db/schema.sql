@@ -24,8 +24,14 @@ CREATE TABLE  real_pets(
 	notes VARCHAR(400) NULL,
 	adopted BOOLEAN DEFAULT FALSE NOT NULL,
 	pic BLOB NULL,
+	adopted_date DATE() NULL,
+	adoptedby_name VARCHAR(255) NULL,
+	adoptedby_email VARCHAR(255) NULL,
+	adoptedby_phone VARCHAR(30) NULL,
 	PRIMARY KEY (id)
 );
+-- added adoption details here based on form fields in the adoption request to track info when a pet is adopted,
+--  as they would in real life, but all fields optional
 -- ==========================================
 
 
@@ -33,25 +39,27 @@ CREATE TABLE  real_pets(
 CREATE TABLE fantasy_animals(
 	id int NOT NULL AUTO_INCREMENT,
 	name VARCHAR(255) NOT NULL,
-	pic BLOB,
+	pic BLOB NULL,
 	age INT(5) NOT NULL,
 	size_in_feet INT(5.5) NOT NULL,
 	temperament VARCHAR(50) NOT NULL,
 	price DECIMAL(20.3) NOT NULL,
 	from_where VARCHAR(255) NOT NULL,
 	matching_real_animal VARCHAR(50) NOT NULL,
-	adopted BOOLEAN DEFAULT false,
+	adopted BOOLEAN DEFAULT FALSE NOT NULL,
 	PRIMARY KEY (id)
 );
 -- ============================================
 
 -- Adoption Form===============================
-CREATE TABLE adoption_form (
-	id int NOT NULL AUTO_INCREMENT,
-	name VARCHAR(255) NOT NULL,
-	email VARCHAR(255) NULL,
-	phone VARCHAR(30) NOT NULL,
-	message VARCHAR(255) NULL,
+CREATE TABLE adoption_requests (
+	id INT NOT NULL AUTO_INCREMENT,
+	client_name VARCHAR(255) NOT NULL,
+	client_email VARCHAR(255) NOT NULL,
+	client_phone VARCHAR(30) NULL,
+	client_message VARCHAR(500) NULL,
+	pet_id INT NULL,
 	PRIMARY KEY (id)
 );
+-- maybe add a timestamp for each request, auto-generated
 -- ==============================================

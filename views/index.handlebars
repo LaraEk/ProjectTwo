@@ -13,6 +13,11 @@
                 <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
                     <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
                     <img class="card-img" alt="CREATURE to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                    <p> Breed: {{ this.breed }} </p>
+                    <p> Age: {{ this.age }} </p>
+                    <p> Weight: {{ this.pet_weight }} </p>
+                    <p> Price: {{ this.price }} age, pet_weight, price, notes</p>
+                    <p> Notes: {{ this.notes }} </p>
                     <p>I already have a home!</p>
                     <br/>
                     <br/>
@@ -26,6 +31,11 @@
                     <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
                         <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
                         <img class="card-img" alt="CREATURE to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                        <p> Breed: {{ this.breed }} </p>
+                        <p> Age: {{ this.age }} </p>
+                        <p> Weight: {{ this.pet_weight }} </p>
+                        <p> Price: {{ this.price }} age, pet_weight, price, notes</p>
+                        <p> Notes: {{ this.notes }} </p>
                         <p>I haven't yet been adopted!  Click on the button below to adopt me!</p>
                         <button type="submit" class="btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Adopt Me!</button>
                     </div>

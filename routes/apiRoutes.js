@@ -16,7 +16,15 @@ app.get("/", function(req,res){
 
   });
 
+  // Fantasy_Animals.findAll({}).then(function(result) {
+  //   console.log(result);
+  //   res.render("index",{fdata: result});
+
+  // });
+
+
 });
+
 
   // Search for Specific Pet (or all pets) then provides JSON
   app.get("/api/realpet/:petid?", function(req, res) {
@@ -42,6 +50,29 @@ app.get("/", function(req,res){
     }
   });
 
+  // Search for Specific Pet (or all pets) then provides JSON
+  app.get("/api/fantasypet/:petid?", function(req, res) {
+    // If the user provides a specific pet in the URL...
+    if (req.params.petid) {
+      // Then display the JSON for ONLY that pet.
+      // (Note how we're using the ORM here to run our searches)
+      Fantasy_Animals.findOne({
+        where: {
+          id: req.params.petid
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    }
+    else {
+      // Otherwise...
+      // Otherwise display the data for all of the pets.
+      // (Note how we're using Sequelize here to run our searches)
+      Fantasy_Animals.findAll({}).then(function(result) {
+        return res.json(result);
+      });
+    }
+  });
 
   // Create a new example
 //   app.post("/api/examples", function(req, res) {

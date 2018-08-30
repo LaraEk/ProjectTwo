@@ -2,7 +2,7 @@
   "name": "node-handlebars-boilerplate",
   "version": "1.0.0",
   "description": "Project 2 Starter",
-  "main": "server.js",
+  "start": "node server.js",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint **/*.js --quiet",

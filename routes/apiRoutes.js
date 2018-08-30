@@ -1,4 +1,4 @@
-var db = require("../models/real_pets");
+//var db = require("../models/real_pets");
 
 // Dependencies
 // =============================================================
@@ -7,6 +7,17 @@ var RealPet = require("../models/real_pets");
 // Routes
 // =============================================================
 module.exports = function(app) {
+
+app.get("/", function(req,res){
+
+  RealPet.findAll({}).then(function(result) {
+    console.log(result);
+    res.render("index",{data: result});
+
+  });
+
+});
+
   // Search for Specific Pet (or all pets) then provides JSON
   app.get("/api/realpet/:petid?", function(req, res) {
     // If the user provides a specific pet in the URL...

@@ -44,3 +44,14 @@ CREATE TABLE fantasy_animals(
 	PRIMARY KEY (id)
 );
 -- ============================================
+
+-- Adoption Form===============================
+CREATE TABLE adoption_form (
+	id int NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NULL,
+	phone VARCHAR(30) NOT NULL,
+	message VARCHAR(255) NULL,
+	PRIMARY KEY (id)
+);
+-- ==============================================

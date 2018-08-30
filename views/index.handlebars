@@ -1,3 +1,66 @@
+{{> f-navbar}}
+
+<div class="container-fluid" id="realpetscards">
+	<div class="row">
+		<!--spacer--><div class="col-xs-0 col-sm-1 col-md-2 col-lg-2"></div>
+        <section class="col-xs-12 col-sm-10 col-md-8 col-lg-8 jumbotron card card-block py-4">
+            <h1>Pets Galore!</h1>
+            <h3>Choose Your Favorite Pets Below! </h3>            
+            <hr>
+
+        <div class="row ">
+            {{#each data}}      <!-- HERE BEGINS THE EACH --> 
+                {{#if adopted}} <!-- IF PET IS ADOPTED, THIS IS THE CARD THAT DISPLAYS -->
+            <div class="col-md-4">
+                <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
+                    <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
+                    <img class="card-img" alt="PET to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                    <p> Breed: {{ this.breed }} </p>
+                    <p> Age: {{ this.age }} </p>
+                    <p> Weight: {{ this.pet_weight }} </p>
+                    <p> Price: {{ this.price }}</p>
+                    <p> Notes: {{ this.notes }} </p>
+                    <p>I already have a home!</p>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <button type="submit" class="btn py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Not available for adoption</button>
+                </div>
+            </div>
+
+                {{else}}       <!-- IF PET IS NOT YET ADOPTED, THIS IS THE CARD THAT DISPLAYS -->
+                <div class="col-md-4">
+                    <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
+                        <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
+                        <img class="card-img" alt="PET to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                        <p> Breed: {{ this.breed }} </p>
+                        <p> Age: {{ this.age }} </p>
+                        <p> Weight: {{ this.pet_weight }} </p>
+                        <p> Price: {{ this.price }}</p>
+                        <p> Notes: {{ this.notes }} </p>
+                        <p>I haven't yet been adopted!  Click on the button below to adopt me!</p>
+                        <button type="submit" class="btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Adopt Me!</button>
+                    </div>
+                </div>
+                    {{!-- END single PET card --}}
+                {{/if}}
+
+            {{/each}}           <!-- HERE ENDS THE EACH --> 
+        </div>
+
+
+        </section>
+            
+        <!--spacer--><div class="col-xs-0 col-sm-1 col-md-2 col-lg-2"></div>
+
+    </div> <!-- end row2 page body -->
+
+
+<!-- ----------------------------------------------------------- -->
+<!-- -----------REAL PETS ABOVE; FANTASY PETS BELOW ------------ -->
+<!-- ----------------------------------------------------------- -->
+
+
 <div class="container-fluid">
 	<div class="row">
 		<!--spacer--><div class="col-xs-0 col-sm-1 col-md-2 col-lg-2"></div>
@@ -11,13 +74,14 @@
                 {{#if adopted}} <!-- IF CREATURE IS ADOPTED, THIS IS THE CARD THAT DISPLAYS -->
             <div class="col-md-4">
                 <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
-                    <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
+                    <h2 class="card-title py-md-3 px-md-4"> {{ this.name }} </h2>
                     <img class="card-img" alt="CREATURE to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
-                    <p> Breed: {{ this.breed }} </p>
                     <p> Age: {{ this.age }} </p>
-                    <p> Weight: {{ this.pet_weight }} </p>
-                    <p> Price: {{ this.price }} age, pet_weight, price, notes</p>
-                    <p> Notes: {{ this.notes }} </p>
+                    <p> Size in Feet: {{ this.size_in_feet }} </p>
+                    <p> Temperament: {{ this.temperament }} </p>
+                    <p> Price: {{ this.price }}</p>
+                    <p> From: {{ this.from_where }}</p>
+                    <p> If you like this, try... {{ this.matching_real_animal }} </p>
                     <p>I already have a home!</p>
                     <br/>
                     <br/>
@@ -34,7 +98,7 @@
                         <p> Breed: {{ this.breed }} </p>
                         <p> Age: {{ this.age }} </p>
                         <p> Weight: {{ this.pet_weight }} </p>
-                        <p> Price: {{ this.price }} age, pet_weight, price, notes</p>
+                        <p> Price: {{ this.price }}</p>
                         <p> Notes: {{ this.notes }} </p>
                         <p>I haven't yet been adopted!  Click on the button below to adopt me!</p>
                         <button type="submit" class="btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Adopt Me!</button>
@@ -52,6 +116,7 @@
         <!--spacer--><div class="col-xs-0 col-sm-1 col-md-2 col-lg-2"></div>
 
     </div> <!-- end row2 page body -->
+
 
     <footer class="container-fluid text-center">
         Copyright &copy; 2018 The Amazons

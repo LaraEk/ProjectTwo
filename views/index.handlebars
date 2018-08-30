@@ -24,12 +24,12 @@
             <hr>
 
         <div class="row ">
-            {{#each data}}      <!-- HERE BEGINS THE EACH --> 
+            {{#each alldata.realdata}}      <!-- HERE BEGINS THE EACH --> 
                 {{#if adopted}} <!-- IF PET IS ADOPTED, THIS IS THE CARD THAT DISPLAYS -->
             <div class="col-md-4">
                 <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
                     <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
-                    <img class="card-img" alt="PET to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                    <img class="card-img" alt="PET to ADOPT" src="{{ this.pic }}" style="width: 200px" />
                     <p> Breed: {{ this.breed }} </p>
                     <p> Age: {{ this.age }} </p>
                     <p> Weight: {{ this.pet_weight }} </p>
@@ -47,7 +47,7 @@
                 <div class="col-md-4">
                     <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
                         <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
-                        <img class="card-img" alt="PET to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                        <img class="card-img" alt="PET to ADOPT" src="{{ this.pic }}" style="width: 200px" />
                         <p> Breed: {{ this.breed }} </p>
                         <p> Age: {{ this.age }} </p>
                         <p> Weight: {{ this.pet_weight }} </p>
@@ -90,12 +90,12 @@
             <hr>
 
         <div class="row ">
-            {{#each data}}      <!-- HERE BEGINS THE EACH --> 
+            {{#each alldata.fantasydata}}      <!-- HERE BEGINS THE EACH --> 
                 {{#if adopted}} <!-- IF CREATURE IS ADOPTED, THIS IS THE CARD THAT DISPLAYS -->
             <div class="col-md-4">
                 <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
                     <h2 class="card-title py-md-3 px-md-4"> {{ this.name }} </h2>
-                    <img class="card-img" alt="CREATURE to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                    <img class="card-img" alt="CREATURE to ADOPT" src="{{ this.pic }}" style="width: 200px" />
                     <p> Age: {{ this.age }} </p>
                     <p> Size in Feet: {{ this.size_in_feet }} </p>
                     <p> Temperament: {{ this.temperament }} </p>
@@ -114,7 +114,7 @@
                 <div class="col-md-4">
                     <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
                         <h2 class="card-title py-md-3 px-md-4"> {{ this.name }} </h2>
-                        <img class="card-img" alt="CREATURE to ADOPT" src="https://placekitten.com/280/200?image={{id}}" />
+                        <img class="card-img" alt="CREATURE to ADOPT" src="{{ this.pic }}" style="width: 200px"/>
                     <p> Age: {{ this.age }} </p>
                     <p> Size in Feet: {{ this.size_in_feet }} </p>
                     <p> Temperament: {{ this.temperament }} </p>

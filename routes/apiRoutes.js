@@ -12,7 +12,7 @@ module.exports = function(app) {
 app.get("/", function(req,res){
 
   var data = { realdata: {}, fantasydata: {} };
-  // note: created separate variables in order to be able to show two tables from one single DB 
+  // note: created separate variables in order to be able to show two tables from one single DB (realdata and fantasydata)
 
   RealPet.findAll({}).then(function(result) {
     console.log(result);

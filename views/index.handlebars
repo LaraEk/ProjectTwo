@@ -81,27 +81,29 @@
 
 <div id="fantasypetscards">
 
-<div class="container-fluid">
+{{> f-navbar}}
+
+<div class="container-fluid" style="background-image: url(sparkleblue.jpg)">
 	<div class="row">
 		<!--spacer--><div class="col-xs-0 col-sm-1 col-md-2 col-lg-2"></div>
-        <section class="col-xs-12 col-sm-10 col-md-8 col-lg-8 jumbotron card card-block py-4">
-            <h1>Fantasy Pets Galore!</h1>
-            <h3>Fantastic Pets of All Flavours Below! </h3>            
+        <section class="col-xs-12 col-sm-10 col-md-8 col-lg-8 jumbotron card card-block py-4" style="background-image: url(images/starsss.jpg); background-size: cover">
+            <h1 id="fpetstitle">Fantasy Pets Galore!</h1>
+            <h3 id="fpetssubtitle">Fantastic Pets of All Flavours Below! </h3>            
             <hr>
 
-        <div class="row ">
+        <div class="row" id="fantasycardsrow">
             {{#each alldata.fantasydata}}      <!-- HERE BEGINS THE EACH --> 
                 {{#if adopted}} <!-- IF CREATURE IS ADOPTED, THIS IS THE CARD THAT DISPLAYS -->
             <div class="col-md-4">
                 <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
                     <h2 class="card-title py-md-3 px-md-4"> {{ this.name }} </h2>
-                    <img class="card-img" alt="CREATURE to ADOPT" src="{{ this.pic }}" style="width: 200px" />
-                    <p> Age: {{ this.age }} </p>
+                    <center><img class="card-img" alt="CREATURE to ADOPT" src="{{ this.pic }}" style="width: 200px" /></center>
+                    <p> Age:</span> {{ this.age }} </p>
                     <p> Size in Feet: {{ this.size_in_feet }} </p>
                     <p> Temperament: {{ this.temperament }} </p>
-                    <p> Price: {{ this.price }}</p>
+                    <p> Price: ${{ this.price }}</p>
                     <p> From: {{ this.from_where }}</p>
-                    <p> If you like this, try... {{ this.matching_real_animal }} </p>
+                    <p> If you like this, try a pet more like... <br/> {{ this.matching_real_animal }} </p>
                     <p>I already have a home!</p>
                     <br/>
                     <br/>
@@ -114,7 +116,7 @@
                 <div class="col-md-4">
                     <div class="card my-md-2 my-sm-2 my-xs-2 my-xs-2">
                         <h2 class="card-title py-md-3 px-md-4"> {{ this.name }} </h2>
-                        <img class="card-img" alt="CREATURE to ADOPT" src="{{ this.pic }}" style="width: 200px"/>
+                        <center><img class="card-img" alt="CREATURE to ADOPT" src="{{ this.pic }}" style="width: 200px"/></center>
                     <p> Age: {{ this.age }} </p>
                     <p> Size in Feet: {{ this.size_in_feet }} </p>
                     <p> Temperament: {{ this.temperament }} </p>

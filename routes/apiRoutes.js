@@ -28,20 +28,6 @@ app.get("/", function(req,res){
 });
 
 
-  // RealPet.findAll({}).then(function(result) {
-  //   console.log(result);
-  //   res.render("index",{data: result});
-
-  // });
-
-  // Fantasy_Animals.findAll({}).then(function(result) {
-  //   console.log(result);
-  //   res.render("index",{fdata: result});
-
-  // });
-
-
-
   // Search for Specific Pet (or all pets) then provides JSON
   app.get("/api/realpet/:petid?", function(req, res) {
     // If the user provides a specific pet in the URL...

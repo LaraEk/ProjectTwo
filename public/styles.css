@@ -1,0 +1,36 @@
+#fpetstitle {
+    Font-Family: 'Cinzel', Cursive;
+    Font-Size: 64px;
+    color: rgb(26, 38, 92)
+}
+
+fpetssubtitle {
+    Font-Family: 'Fauna One', Serif;
+    Font-Size: 14px;
+    color: rgb(93, 46, 99);
+}
+
+#fantasycardsrow h2 {
+    Font-Family: 'Cinzel', Cursive;
+    Font-Size: 24px;
+    color: rgb(93, 46, 99);
+    text-align: center;
+    padding-top: 10px;
+}
+
+#fantasycardsrow p {
+    Font-Family: 'Cinzel', Cursive;
+    Font-Size: 14px;
+    line-height: 15px;
+    color: rgb(26, 38, 92);
+    padding-left: 10px;
+}
+
+.card {
+    background-color: rgb(253, 205, 205, .5);
+    border-radius: 10px; 
+}
+
+.card-img {
+    padding: 15px;
+}

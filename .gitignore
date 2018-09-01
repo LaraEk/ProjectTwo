@@ -1,3 +1,8 @@
+# project-specific excluded files
+Ranax_Draft_adoption2.zip
+Ranax_Draft_adoption2
+
+# boilerplate exclusions
 .DS_Store
 node_modules
 npm-debug.log

@@ -19,9 +19,9 @@ $("#adopt-req-form").on("submit", function(event) {
 
     console.log(newAdoptReq);
 
-    // var ajaxUrl = "/api/cats/" + newCatName;
+    // var ajaxUrl = "/api/adopt-form"
 
-    //     // Send the POST request.
+    //     // Send the POST request with the "newAdoptReq" object above as the data being sent
     //     $.ajax(ajaxUrl, {
     //         type: "POST",
     //         data: newAdoptReq,
@@ -32,31 +32,34 @@ $("#adopt-req-form").on("submit", function(event) {
     //         // console.log("Success! Added new cat to the database.");
     //         // Reload the page to get the updated list
     //         location.reload();
-    //         document.getElementById("create-cat-form").reset();
+    //         document.getElementById("adopt-req-form").reset();
+    //         alert("Thank you! Your adoption request has been received. We'll get back to you within 3 business days. If you have any questions, please email us directly at adoptions@exampledomain.com .");
     //         }
     //     );
 
     // export the object- send POST request to api routes file
-    // $.post("APIROUTEHERE", newAdoptReq,
-    //     function(data) { //receives the result of the post function
-    //         if(data) {
-    //             // if a response is returned, meaning the POST was successful
-    //             console.log(data);//console log response for testing purposes
+    $.post("/api/adopt-form", newAdoptReq,
+        function(data) { //receives the result of the post function
+            if(data) {
+                // if a response is returned, meaning the POST was successful
+                console.log(data);//console log response for testing purposes
                 
-    //             var confirmDiv = $("#confirmDiv");
-    //             confirmDiv.text("Thank you! Your adoption request has been received. We'll get back to you within 3 business days. If you have any questions, please email us directly at adoptions@exampledomain.com .");
+                // var confirmDiv = $("#confirmDiv");
+                // confirmDiv.text("Thank you! Your adoption request has been received. We'll get back to you within 3 business days. If you have any questions, please email us directly at adoptions@exampledomain.com .");
 
-    //         }
-    //        else {
-    //         //if there is an error and no response is returned
+                alert("Thank you! Your adoption request has been received. We'll get back to you within 3 business days. If you have any questions, please email us directly at adoptions@exampledomain.com .");
 
-    //             var confirmDiv = $("#confirmDiv");
-    //             confirmDiv.text("We're sorry, an error prevented submission of your request. Please email us directly at adoptions@exampledomain.com .");
+            }
+           else {
+            //if there is an error and no response is returned
 
-    //             // alert("We're sorry, an error prevented submission of your request. Please email us directly at adoptions@exampledomain.com .");
-    //        }
+                // var confirmDiv = $("#confirmDiv");
+                // confirmDiv.text("We're sorry, an error prevented submission of your request. Please email us directly at adoptions@exampledomain.com .");
+
+                alert("We're sorry, an error prevented submission of your request. Please email us directly at adoptions@exampledomain.com .");
+           }
             
-    // });
+    });
 
     //Clear the form when submitting- 
     //TODO- add more efficient method, clear form command

@@ -10,7 +10,8 @@ $("#submit-adopt-form").on("click", function(event) {
         clientName: $("#client-name").val().trim(),
         clientEmail: $("#client-email").val().trim(),
         clientPhone: $("#client-phone").val().trim(),
-        clientMessage: $("#client-message").val().trim()
+        clientMessage: $("#client-message").val().trim(),
+        petId: $("#submit-adopt-form").attr("data-pet-id")
         //petId: $("#submit-adopt-form") //TODO put data-pet-id value from input submit button here
     };
 

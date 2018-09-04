@@ -1,3 +1,53 @@
+/* ------------------------------------------------------ */
+/* --------------- CHOICES CARD CSS BELOW --------------- */
+/* ------------------------------------------------------ */
+
+#choicescard {
+    width: 50%; 
+    height: auto;
+    margin: 10% 25% 10% 25%;
+    padding: 0 15px 15px 15px;
+    border-style: solid;
+    border: double;
+    border-width: 10px;
+    border-color: rgb(26, 38, 92);
+    position: absolute;
+    text-align: center;
+    Font-Family: 'Cinzel', Cursive;
+    Font-Size: 40px;
+    color: rgb(26, 38, 92);
+    background-image: url(/public/images/catbackground.png);
+    background-size: cover;
+}
+
+#realpetsbutton {
+    background-color:  rgb(26, 38, 92);
+    border: double;
+    border-width: 5px;
+    color: rgb(250, 231, 231);
+    padding: 4px 10px;
+    text-align: center;
+    display: inline-block;
+    Font-Family: 'Fauna One', Serif;
+    font-size: 20px;
+ }
+
+#fantasypetsbutton {
+    background-color: rgb(93, 46, 99);
+    border: double;
+    border-width: 5px;
+    color: rgb(250, 231, 231);
+    padding: 4px 10px;
+    text-align: center;
+    display: inline-block;
+    Font-Family: 'Fauna One', Serif;
+    font-size: 20px;
+}
+
+/* ------------------------------------------------------ */
+/* ------------- FANTASY ANIMAL CSS BELOW --------------- */
+/* ------------------------------------------------------ */
+
 #fpetstitle {
     Font-Family: 'Cinzel', Cursive;
     Font-Size: 64px;
@@ -26,11 +76,37 @@ fpetssubtitle {
     padding-left: 10px;
 }
 
-.card {
+.fantasycard {
     background-color: rgb(253, 205, 205, .5);
     border-radius: 10px; 
 }
 
-.card-img {
+.fantasycard-img {
     padding: 15px;
 }
+
+/* ------------------------------------------------------ */
+/* ----- FANTASY CSS ABOVE // REAL ANIMAL CSS BELOW ----- */
+/* ------------------------------------------------------ */
+
+#rpetstitle {
+}
+
+#rpetssubtitle {
+}
+
+#realcardsrow {
+
+}
+
+.realcard {
+
+}
+
+.realcard-img {
+
+}
+
+/* ------------------------------------------------------ */
+/* -------------- REAL ANIMAL CSS ABOVE ----------------- */
+/* ------------------------------------------------------ */

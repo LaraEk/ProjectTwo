@@ -13,8 +13,7 @@ $("#adopt-req-form").on("submit", function(event) {
         clientEmail: $("#client-email").val().trim(),
         clientPhone: $("#client-phone").val().trim(),
         clientMessage: $("#client-message").val().trim(),
-        petId: $("#submit-adopt-form").attr("data-pet-id")
-        //petId: $("#submit-adopt-form") //TODO put data-pet-id value from input submit button here
+        petId: $("#submit-adopt-form").data("pet-id")
     };
 
     console.log(newAdoptReq);

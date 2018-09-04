@@ -12,19 +12,19 @@ USE pets_db;
 -- );
 -- -- ============================================
 
--- REAL PETS CATEGORY ========================
-
 CREATE TABLE  real_pets(
 	id int NOT NULL AUTO_INCREMENT,
 	pet_name VARCHAR(255) NOT NULL,
-	breed VARCHAR(100) NULL,
-	age int NULL,
+	pet_type VARCHAR(255) NOT NULL,
+	pet_breed VARCHAR(255) NULL,
+	pet_gender enum('m','f'),
+	pet_age int NULL,
 	pet_weight DECIMAL(4,2) NULL,
-	price DECIMAL(6,2) NOT NULL,
-	notes VARCHAR(400) NULL,
-	adopted BOOLEAN DEFAULT FALSE NOT NULL,
-	pic BLOB NULL,
-	adopted_date DATE() NULL,
+	pet_price DECIMAL(6,2) NOT NULL,
+	pet_notes VARCHAR(400) NULL,
+	pet_adopted BOOLEAN DEFAULT FALSE NOT NULL,
+	pet_pic BLOB NULL,
+	adopted_date DATE NULL,
 	adoptedby_name VARCHAR(255) NULL,
 	adoptedby_email VARCHAR(255) NULL,
 	adoptedby_phone VARCHAR(30) NULL,
@@ -41,9 +41,9 @@ CREATE TABLE fantasy_animals(
 	name VARCHAR(255) NOT NULL,
 	pic BLOB NULL,
 	age INT(5) NOT NULL,
-	size_in_feet INT(5.5) NOT NULL,
+	size_in_feet INT(5) NOT NULL,
 	temperament VARCHAR(50) NOT NULL,
-	price DECIMAL(20.3) NOT NULL,
+	price DECIMAL(20,3) NOT NULL,
 	from_where VARCHAR(255) NOT NULL,
 	matching_real_animal VARCHAR(50) NOT NULL,
 	adopted BOOLEAN DEFAULT FALSE NOT NULL,
@@ -61,5 +61,4 @@ CREATE TABLE adoption_requests (
 	pet_id INT NULL,
 	PRIMARY KEY (id)
 );
--- maybe add a timestamp for each request, auto-generated
--- ==============================================
+

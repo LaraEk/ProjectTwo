@@ -9,7 +9,10 @@
   <title>Adoption Request Form</title>
   <link rel="stylesheet" type="text/css" href="../../public/real-styles/css/reset.css">
   <link rel="stylesheet" type="text/css" href="../../public/real-styles/css/style4.css" title="formstyles">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <!-- my scripts for this form -->
   <script src="../../public/js/adoption-req.js"></script>
 </head>
 
@@ -22,7 +25,8 @@
       </h2>
       
 
-      <form id="contact-form">
+      <form id="adopt-req-form" action="/api/adopt-form" method="POST">
+        <!-- NOTE- Form needs method defined as POST to avoid it sending all the data through the url because it will default to assuming the GET method which uses the url automatically -->
         <ul>
           <li>
             <label for="client-name">Name*</label>
@@ -34,14 +38,15 @@
           </li>
           <li>
             <label for="client-phone">Phone Number</label>
-            <input type="text" id="client-phone" name="client-phone" placeholder="555-555-5555">
+            <input type="tel" id="client-phone" name="client-phone" placeholder="555-555-5555">
           </li>
           <li>
             <label for="client-message">Message*</label>
             <textarea id="client-message" name="client-message" required="required"></textarea>
           </li>
         </ul>
-        <input class="btn btn-secondary" id="submit-adopt-form" type="submit" data-pet-id="TODOpetidhere" />
+        <input class="btn btn-secondary" id="submit-adopt-form" type="submit" data-pet-id="1" />
+        <!-- TODO- put the pet id here pulled from the button hit to bring up the form, for now 1 is placeholder -->
       </form>
 
     </section>

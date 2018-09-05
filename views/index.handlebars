@@ -78,7 +78,7 @@
             </h2>
             
 
-            <form id="adopt-req-form" action="/api/adopt-form" method="POST">
+            <form id="adopt-req-form" action="/" method="POST" data-pet-id="1">
                 <!-- NOTE- Form needs method defined as POST to avoid it sending all the data through the url because it will default to assuming the GET method which uses the url automatically -->
                 <ul>
                 <li>
@@ -98,7 +98,7 @@
                     <textarea id="client-message" name="client-message" required="required"></textarea>
                 </li>
                 </ul>
-                <input class="btn btn-secondary" id="submit-adopt-form" type="submit" data-pet-id="1" />
+                <input class="btn btn-secondary" id="submit-adopt-form" type="submit" />
                 <!-- TODO- put the pet id here pulled from the button hit to bring up the form, for now 1 is placeholder -->
             </form>
 

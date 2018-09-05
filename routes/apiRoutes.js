@@ -15,11 +15,11 @@ app.get("/", function(req,res){
   // note: created separate variables in order to be able to show two tables from one single DB (realdata and fantasydata)
 
   RealPet.findAll({}).then(function(result) {
-    console.log(result);
+    // console.log(result);
     data.realdata = result;
   });
   Fantasy_Animals.findAll({}).then(function(result) {
-    console.log(result);
+    // console.log(result);
     data.fantasydata = result;
   });
 

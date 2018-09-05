@@ -29,21 +29,22 @@
 
         <div class="row" id="realcardsrow">
             {{#each alldata.realdata}}      <!-- HERE BEGINS THE EACH --> 
-                {{#if adopted}} <!-- IF PET IS ADOPTED, THIS IS THE CARD THAT DISPLAYS -->
+                {{#if pet_adopted}} <!-- IF PET IS ADOPTED, THIS IS THE CARD THAT DISPLAYS -->
             <div class="col-md-4">
                 <div class="card realcard my-md-2 my-sm-2 my-xs-2 my-xs-2">
                     <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
-                    <img class="card-img realcard-img" alt="PET to ADOPT" src="{{ this.pic }}" style="width: 200px" />
-                    <p> Breed: {{ this.breed }} </p>
-                    <p> Age: {{ this.age }} </p>
+                    <img class="card-img realcard-img" alt="PET to ADOPT" src="images/{{ this.pet_pic }}" style="width: 200px" />
+                    <p> Type: {{ this.pet_type }} </p>
+                    <p> Breed: {{ this.pet_breed }} </p>
+                    <p> Age: {{ this.pet_age }} </p>
                     <p> Weight: {{ this.pet_weight }} </p>
-                    <p> Price: {{ this.price }}</p>
-                    <p> Notes: {{ this.notes }} </p>
+                    <p> Price: {{ this.pet_price }}</p>
+                    <p> Notes: {{ this.pet_notes }} </p>
                     <p>I already have a home!</p>
                     <br/>
                     <br/>
                     <br/>
-                    <button type="submit" class="btn py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Not available for adoption</button>
+                    <button type="submit" class="btn py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{pet_adopted}}">Not available for adoption</button>
                 </div>
             </div>
 
@@ -51,14 +52,15 @@
                 <div class="col-md-4">
                     <div class="card realcard my-md-2 my-sm-2 my-xs-2 my-xs-2">
                         <h2 class="card-title py-md-3 px-md-4"> {{ this.pet_name }} </h2>
-                        <img class="card-img realcard-img" alt="PET to ADOPT" src="{{ this.pic }}" style="width: 200px" />
-                        <p> Breed: {{ this.breed }} </p>
-                        <p> Age: {{ this.age }} </p>
+                        <img class="card-img realcard-img" alt="PET to ADOPT" src="images/{{ this.pet_pic }}" style="width: 200px" />
+                        <p> Type: {{ this.pet_type }} </p>
+                        <p> Breed: {{ this.pet_breed }} </p>
+                        <p> Age: {{ this.pet_age }} </p>
                         <p> Weight: {{ this.pet_weight }} </p>
-                        <p> Price: {{ this.price }}</p>
-                        <p> Notes: {{ this.notes }} </p>
+                        <p> Price: {{ this.pet_price }}</p>
+                        <p> Notes: {{ this.pet_notes }} </p>
                         <p>I haven't yet been adopted!  Click on the button below to adopt me!</p>
-                        <button id="adoptable" type="submit" class="btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Adopt Me!</button>
+                        <button type="submit" class="adoptable btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{pet_adopted}}">Adopt Me!</button>
                     </div>
                 </div>
                     {{!-- END single PET card --}}
@@ -76,7 +78,7 @@
             </h2>
             
 
-            <form id="adopt-req-form" action="/api/adopt-form" method="POST">
+            <form id="adopt-req-form" action="/" method="POST" data-pet-id="1">
                 <!-- NOTE- Form needs method defined as POST to avoid it sending all the data through the url because it will default to assuming the GET method which uses the url automatically -->
                 <ul>
                 <li>
@@ -96,7 +98,7 @@
                     <textarea id="client-message" name="client-message" required="required"></textarea>
                 </li>
                 </ul>
-                <input class="btn btn-secondary" id="submit-adopt-form" type="submit" data-pet-id="1" />
+                <input class="btn btn-secondary" id="submit-adopt-form" type="submit" />
                 <!-- TODO- put the pet id here pulled from the button hit to bring up the form, for now 1 is placeholder -->
             </form>
 
@@ -182,7 +184,7 @@
                     <p> From: {{ this.from_where }}</p>
                     <p> If you like this, try... {{ this.matching_real_animal }} </p>
                     <p>I haven't yet been adopted!  Click on the button below to adopt me!</p>
-                    <button id="adoptable" type="submit" class="btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Adopt Me!</button>
+                    <button type="submit" class="adoptable btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Adopt Me!</button>
                     </div>
                 </div>
                     {{!-- END single CCREATURE card --}}

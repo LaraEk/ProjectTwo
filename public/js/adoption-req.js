@@ -4,12 +4,12 @@
 //note- using Star Wars simple example exercise for starter code here
 
 // get form inputs when submitted
-$("#adopt-req-form").on("submit", function(event) {
+$(".adopt-req-form").on("submit", function(event) {
     event.preventDefault();
 
     // grab the form elements and save them in key:value pairs within an object
     var newAdoptReq = {
-        clientName: $("#client-name").val().trim(),
+        clientName: $(this.client-name).val().trim(),
         clientEmail: $("#client-email").val().trim(),
         clientPhone: $("#client-phone").val().trim(),
         clientMessage: $("#client-message").val().trim(),

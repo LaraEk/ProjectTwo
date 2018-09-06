@@ -60,11 +60,11 @@
                         <p> Price: {{ this.pet_price }}</p>
                         <p> Notes: {{ this.pet_notes }} </p>
                         <p>I haven't yet been adopted!  Click on the button below to adopt me!</p>
-                        <button type="submit" class="adoptable btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{pet_adopted}}" data-toggle="modal" data-target="#adoptReqModal">Adopt Me!</button>
+                        <button type="submit" class="adoptable btn btn-primary py-md-2 px-md-4" data-id="{{this.id}}" data-adopted-state="{{this.pet_adopted}}" data-toggle="modal" data-target="#adoptReqModal{{this.id}}">Adopt Me!</button>
 
                         
                         <!-- Modal FOR ADOPTION FORM FOR THIS INDIVIDUAL PET -->
-                        <div class="modal fade" id="adoptReqModal" tabindex="-1" role="dialog" aria-labelledby="adoptReqModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="adoptReqModal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="adoptReqModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -73,7 +73,7 @@
                                     </h3>
                                     <small>* denotes required fields - we will never sell your information.</small>
                                 </div>
-                                <form id="adopt-req-form" action="/" method="POST" data-pet-id="{{id}}" >
+                                <form id="adopt-req-form-{{this.id}}" action="/api/adopt-form" method="POST" data-pet-id="{{id}}" >
                                     <div class="modal-body text-center" id="resultsDiv">
                                         
                                         <!-- NOTE- Form needs method defined as POST to avoid it sending all the data through the url because it will default to assuming the GET method which uses the url automatically -->

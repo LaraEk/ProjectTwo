@@ -42,19 +42,19 @@ INSERT INTO fantasy_animals (name, age, size_in_feet, temperament, price, from_w
 VALUE ("Porgs", ".3", ".2", "nervously cute", "30.20", "Star Wars: Luke's Sulking Island", "puffins", false, 'porgs.jpg');
 
 INSERT INTO fantasy_animals (name, age, size_in_feet, temperament, price, from_where, matching_real_animal, adopted, pic)  
-VALUE ("Mermaid", "20", "6.2", "lures sailors to their deaths with song", "100000.50", "The Sea", "fish", true, 'images/mermaid.png');
+VALUE ("Mermaid", "20", "6.2", "lures sailors to their deaths with song", "100000.50", "The Sea", "fish", true, 'mermaid.png');
 
 INSERT INTO fantasy_animals (name, age, size_in_feet, temperament, price, from_where, matching_real_animal, adopted, pic)  
-VALUE ("Firebird", "100", "23", "wild and free", "25000.20", "Russian Fairytales", "parrot", false, 'images/firebird.png');
+VALUE ("Firebird", "100", "23", "wild and free", "25000.20", "Russian Fairytales", "parrot", false, 'firebird.png');
 
 INSERT INTO fantasy_animals (name, age, size_in_feet, temperament, price, from_where, matching_real_animal, adopted, pic)  
-VALUE ("Unicorn", "30", "7", "rainbowy", "7800.00", "Arthurian Legend", "horse", false, 'images/unicorn.png');
+VALUE ("Unicorn", "30", "7", "rainbowy", "7800.00", "Arthurian Legend", "horse", false, 'unicorn.png');
 
 INSERT INTO fantasy_animals (name, age, size_in_feet, temperament, price, from_where, matching_real_animal, adopted, pic)  
-VALUE ("Jackalope", "2", "1", "fearsome crittur", "17.30", "North American folklore", "rabbit", true, 'images/jackalope.png');
+VALUE ("Jackalope", "2", "1", "fearsome crittur", "17.30", "North American folklore", "rabbit", true, 'jackalope.png');
 
 INSERT INTO fantasy_animals (name, age, size_in_feet, temperament, price, from_where, matching_real_animal, adopted, pic)  
-VALUE ("Bambi", "4", "12", "cute and pretty", "2000.59", "Walt Disney", "deer", true, 'images/bambi.png');
+VALUE ("Bambi", "4", "12", "cute and pretty", "2000.59", "Walt Disney", "deer", true, 'bambi.png');
 -- ======================================================================================================================
 
 -- Adoption Form Entries ================================================================================================

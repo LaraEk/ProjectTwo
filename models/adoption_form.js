@@ -6,17 +6,20 @@ var sequelize = require("../config/connection.js");
 
 //Create the model for the adoption table that matches with the DB
 
-var Adoption_Form = sequelize.define("adoption_form",{
+var Adoption_Form = sequelize.define("adoption_requests",{
     //the ID for the customer (an integer)
     id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
     //the name of the customer (a string)
-    name: Sequelize.STRING,
+    client_name: Sequelize.STRING,
     //the email of the customer (a string)
-    email: Sequelize.STRING,
+    client_email: Sequelize.STRING,
     //the phone number of the customer (a string)
-    phone: Sequelize.STRING,
+    client_phone: Sequelize.STRING,
     //the customer's message (a string)
-    message: Sequelize.STRING
+    client_message: Sequelize.STRING,
+    //the pet ID (an integer)
+    pet_id: Sequelize.INTEGER
+
 },
 // don't add the timestamp attributes (updatedAt, createdAt)
 {

@@ -26,7 +26,15 @@ var Real_Pets = sequelize.define("real_pets",{
     //determine if the pet has been adopted or not (a boolean)
     pet_adopted: Sequelize.BOOLEAN,
     //the picture of the pet (a blob)
-    pet_pic: Sequelize.BLOB
+    pet_pic: Sequelize.BLOB,
+    //the date the pet was adopted
+    adopted_date: Sequelize.DATE,
+    //The person that adopted the pet
+    adoptedby_name:  Sequelize.STRING,
+    //the person's email who adopted the pet
+    adoptedby_email: Sequelize.STRING,
+    //the person's phone number who adopted the pet
+    adoptedby_phone:  Sequelize.STRING
 },
 // don't add the timestamp attributes (updatedAt, createdAt)
 {

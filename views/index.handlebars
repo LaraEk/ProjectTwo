@@ -60,7 +60,55 @@
                         <p> Price: {{ this.pet_price }}</p>
                         <p> Notes: {{ this.pet_notes }} </p>
                         <p>I haven't yet been adopted!  Click on the button below to adopt me!</p>
-                        <button type="submit" class="adoptable btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{pet_adopted}}">Adopt Me!</button>
+                        <button type="submit" class="adoptable btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{pet_adopted}}" data-toggle="modal" data-target="#adoptReqModal">Adopt Me!</button>
+
+                        
+                        <!-- Modal FOR ADOPTION FORM FOR THIS INDIVIDUAL PET -->
+                        <div class="modal fade" id="adoptReqModal" tabindex="-1" role="dialog" aria-labelledby="adoptReqModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="adoptReqModalLabel">
+                                    Adoption Inquiry: {{ this.pet_name }}
+                                    </h3>
+                                    <small>* denotes required fields - we will never sell your information.</small>
+                                </div>
+                                <form id="adopt-req-form" action="/" method="POST" data-pet-id="{{id}}" >
+                                    <div class="modal-body text-center" id="resultsDiv">
+                                        
+                                        <!-- NOTE- Form needs method defined as POST to avoid it sending all the data through the url because it will default to assuming the GET method which uses the url automatically -->
+                                        <ul>
+                                        <li>
+                                            <label for="client-name">Name*</label>
+                                            <input type="text" id="client-name" name="client-name" placeholder="Full Name" required="required">
+                                        </li>
+                                        <li>
+                                            <label for="client-email">Email*</label>
+                                            <input type="email" id="client-email" name="client-email" placeholder="example@example.com" required="required">
+                                        </li>
+                                        <li>
+                                            <label for="client-phone">Phone Number</label>
+                                            <input type="tel" id="client-phone" name="client-phone" placeholder="555-555-5555">
+                                        </li>
+                                        <li>
+                                            <label for="client-message">Message*</label>
+                                            <textarea id="client-message" name="client-message" required="required"></textarea>
+                                        </li>
+                                        </ul>
+                                    
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <input class="btn btn-primary" id="submit-adopt-form" type="submit" data-dismiss="modal" />
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- END MODAL FOR ADOPTION FORM FOR THIS INDIVIDUAL PET -->
+                        
+                        <!--TODO put confirmation div here for success message upon submission -->
                     </div>
                 </div>
                     {{!-- END single PET card --}}

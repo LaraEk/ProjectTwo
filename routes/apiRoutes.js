@@ -2,8 +2,9 @@
 
 // Dependencies
 // =============================================================
-var RealPet = require("../models/real_pets");
+var Real_Pets = require("../models/real_pets");
 var Fantasy_Animals = require("../models/fantasy_animals");
+var Adoption_Form = require("../models/adoption_form");
 
 // Routes
 // =============================================================
@@ -14,7 +15,7 @@ app.get("/", function(req,res){
   var data = { realdata: {}, fantasydata: {} };
   // note: created separate variables in order to be able to show two tables from one single DB (realdata and fantasydata)
 
-  RealPet.findAll({}).then(function(result) {
+  Real_Pets.findAll({}).then(function(result) {
     // console.log(result);
     data.realdata = result;
   });
@@ -34,7 +35,7 @@ app.get("/", function(req,res){
     if (req.params.petid) {
       // Then display the JSON for ONLY that pet.
       // (Note how we're using the ORM here to run our searches)
-      RealPet.findOne({
+      Real_Pets.findOne({
         where: {
           id: req.params.petid
         }
@@ -46,7 +47,7 @@ app.get("/", function(req,res){
       // Otherwise...
       // Otherwise display the data for all of the pets.
       // (Note how we're using Sequelize here to run our searches)
-      RealPet.findAll({}).then(function(result) {
+      Real_Pets.findAll({}).then(function(result) {
         return res.json(result);
       });
     }
@@ -76,12 +77,23 @@ app.get("/", function(req,res){
     }
   });
 
-  // Create a new example
-//   app.post("/api/examples", function(req, res) {
-//     db.Example.create(req.body).then(function(dbExample) {
-//       res.json(dbExample);
-//     });
-//   });
+  // Create a new adoption request entry
+  app.post("/api/adopt-form", function(req, res) {
+    // Take the request...
+    var newAdoptReq = req.body;
+
+    // Then add the adoption form information to the database using sequelize
+    Adoption_Form.create({      
+      client_name: newAdoptReq.clientName,
+      client_email: newAdoptReq.clientEmail,
+      client_phone: newAdoptReq.clientPhone,
+      client_message: newAdoptReq.clientMessage,
+      pet_id: newAdoptReq.petId
+    }).then(function(data) {
+      res.json(data);
+      console.log("TESTING- ADDED NEW ENTRY SUCCESSFULLY")
+    });
+  });
 
 //   // Delete an example by id
 //   app.delete("/api/examples/:id", function(req, res) {

@@ -1,0 +1,53 @@
+        <!-- -----------------ADOPTION REQUEST FORM SECTION ------------------ -->
+
+        <div id="main-container" class="row">
+            {{!-- need to update ids here later from "main" etc. --}}
+            <section class="main-section">
+            <h2>Adoption Inquiry: [Pet Name] <br>
+                <small>* denotes required fields - we will never sell your information.</small>
+            </h2>
+            
+
+            <form id="adopt-req-form" action="/" method="POST" data-pet-id="1">
+                <!-- NOTE- Form needs method defined as POST to avoid it sending all the data through the url because it will default to assuming the GET method which uses the url automatically -->
+                <ul>
+                <li>
+                    <label for="client-name">Name*</label>
+                    <input type="text" id="client-name" name="client-name" placeholder="Full Name" required="required">
+                </li>
+                <li>
+                    <label for="client-email">Email*</label>
+                    <input type="email" id="client-email" name="client-email" placeholder="example@example.com" required="required">
+                </li>
+                <li>
+                    <label for="client-phone">Phone Number</label>
+                    <input type="tel" id="client-phone" name="client-phone" placeholder="555-555-5555">
+                </li>
+                <li>
+                    <label for="client-message">Message*</label>
+                    <textarea id="client-message" name="client-message" required="required"></textarea>
+                </li>
+                </ul>
+                <input class="btn btn-secondary" id="submit-adopt-form" type="submit" />
+                <!-- TODO- put the pet id here pulled from the button hit to bring up the form, for now 1 is placeholder -->
+            </form>
+
+            </section>
+
+            <!-- NOTE: maybe use this section to continue to show the animal the adoption request is for- duplicate code layout from listing for each pet -->
+            <section class="sidebar1" style="float:right">
+            <div id="connects">
+                <center>
+                <h3>Take me home!</h3>
+                <img class="img-fluid port-image" src="../../public/images/chinese hamster.jpg" style="width:180px;height:auto;" alt="Picture of pet to be adopted.">
+                </center>
+            </div>
+            </section>
+        </div>
+        <!-- </main> -->
+
+        <div style="clear:both" id="confirmDiv">
+        <!-- confirmation message will print here after post -->
+        </div>
+
+        <!-- -----------------END ADOPTION REQUEST FORM SECTION ------------------ -->

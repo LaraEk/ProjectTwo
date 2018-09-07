@@ -4,17 +4,22 @@
 //note- using Star Wars simple example exercise for starter code here
 
 // get form inputs when submitted
-$("#adopt-req-form").on("submit", function(event) {
+$(document).on("submit", "form", function(event) {
     event.preventDefault();
+    var $form = $(this);
+    // var petId = $(this).data("pet-id") ;
+    // var clientNameStr = "#client-name" + petId;
 
     // grab the form elements and save them in key:value pairs within an object
     var newAdoptReq = {
-        clientName: $("#client-name").val().trim(),
-        clientEmail: $("#client-email").val().trim(),
-        clientPhone: $("#client-phone").val().trim(),
-        clientMessage: $("#client-message").val().trim(),
-        petId: $(this).data("pet-id")
+        clientName: $form.find("[name=client-name]").val().trim(),
+        clientEmail: $form.find("[name=client-email]").val().trim(),
+        clientPhone: $form.find("[name=client-phone]").val().trim(),
+        clientMessage: $form.find("[name=client-message]").val().trim(),
+        petId: $form.data("pet-id")
     };
+    console.log("newAdoptReq = ");
+    console.log(newAdoptReq);
 
     // send an AJAX POST-request with jQuery
     $.post("/api/adopt-form", newAdoptReq)

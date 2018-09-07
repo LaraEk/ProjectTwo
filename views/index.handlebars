@@ -73,7 +73,7 @@
                                     </h3>
                                     <small>* denotes required fields - we will never sell your information.</small>
                                 </div>
-                                <form id="adopt-req-form-{{this.id}}" action="/api/adopt-form" method="POST" data-pet-id="{{id}}" >
+                                <form class="adopt-req-form" action="/api/adopt-form" method="POST" data-pet-id="{{this.id}}" >
                                     <div class="modal-body text-center" id="resultsDiv">
                                         
                                         <!-- NOTE- Form needs method defined as POST to avoid it sending all the data through the url because it will default to assuming the GET method which uses the url automatically -->

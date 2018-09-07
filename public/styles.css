@@ -110,3 +110,37 @@ fpetssubtitle {
 /* ------------------------------------------------------ */
 /* -------------- REAL ANIMAL CSS ABOVE ----------------- */
 /* ------------------------------------------------------ */
+
+
+/* -----------------------------------------------------  */
+/* ------------------STYLING THE ADOPTION FORM----------- */
+/* ------------------------------------------------------ */
+
+.adopt-req-form li {
+    list-style-type: none; 
+    display: block;
+    padding-bottom: .2em;
+    padding-top: .2em;
+    width: 100%;
+}
+
+.client-message{
+    vertical-align: top;
+}
+
+.adopt-req-form{
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    text-align: left;
+}
+
+/* Style the submit button  */
+.submit-adopt-form {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -2,7 +2,7 @@
 
 <div id="choicescard">
 
-    <p>Insert here a choice of Real Pets or Fantasy Pets</p>
+    <p>Pets Galore!  Choose whether you'd like to look at Real or Fantasy pets!</p>
     <button id="realpetsbutton">Reals</button>
     <button id="fantasypetsbutton">Fantasticals</button>
 
@@ -180,6 +180,52 @@
                     <p> If you like this, try... {{ this.matching_real_animal }} </p>
                     <p>I haven't yet been adopted!  Click on the button below to adopt me!</p>
                     <button type="submit" class="adoptable btn btn-primary py-md-2 px-md-4" data-id="{{id}}" data-adopted-state="{{adopted}}">Adopt Me!</button>
+
+                        <!-- Modal FOR ADOPTION FORM FOR THIS INDIVIDUAL PET -->
+                        <div class="modal fade" id="adoptReqModal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="adoptReqModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="adoptReqModalLabel">
+                                    Adoption Inquiry: {{ this.name }}
+                                    </h3>
+                                    <small>* denotes required fields - we will never sell your information.</small>
+                                </div>
+                                <form class="adopt-req-form" action="/api/adopt-form" method="POST" data-pet-id="{{this.id}}" >
+                                    <div class="modal-body text-center" id="resultsDiv">
+                                        
+                                        <!-- NOTE- Form needs method defined as POST to avoid it sending all the data through the url because it will default to assuming the GET method which uses the url automatically -->
+                                        <ul>
+                                        <li>
+                                            <label for="client-name">Name*</label>
+                                            <input  type="text" class="client-name" name="client-name" placeholder="Full Name" required="required">
+                                        </li>
+                                        <li>
+                                            <label for="client-email">Email*</label>
+                                            <input  type="email" class="client-email" name="client-email" placeholder="example@example.com" required="required">
+                                        </li>
+                                        <li>
+                                            <label for="client-phone">Phone#</label>
+                                            <input   type="tel" class="client-phone" name="client-phone" placeholder="555-555-5555">
+                                        </li>
+                                        <li>
+                                            <label for="client-message">Message*</label>
+                                            <textarea rows ="6" cols = "50" class="client-message" name="client-message" required="required"></textarea>
+                                        </li>
+                                        </ul>
+                                    
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <input class="btn btn-primary submit-adopt-form"  type="submit" data-dismiss="modal" />
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- END MODAL FOR ADOPTION FORM FOR THIS INDIVIDUAL PET -->
+
                     </div>
                 </div>
                     {{!-- END single CCREATURE card --}}

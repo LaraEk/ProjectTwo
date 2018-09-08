@@ -90,22 +90,39 @@ fpetssubtitle {
 /* ------------------------------------------------------ */
 
 #rpetstitle {
+    Font-Family: Courier New;
+    Font-Size: 64px;
+    color: rgb(0, 0, 0)
 }
 
+
 #rpetssubtitle {
+    Font-Family: Courier New;
+    Font-Size: 14px;
+    line-height: 15px;
+    color: rgb(0, 0, 0);
+    padding-left: 10px;
 }
 
 #realcardsrow {
-
+    Font-Family: Courier New;
+    Font-Size: 12px;
+    line-height: 15px;
+    color: rgb(0, 0, 0);
+    padding-left: 10px;
+    background-color: white;
 }
 
 .realcard {
+   
+    border-radius: 10px; 
+    }
 
-}
 
 .realcard-img {
-
+padding:15px;
 }
+
 
 /* ------------------------------------------------------ */
 /* -------------- REAL ANIMAL CSS ABOVE ----------------- */

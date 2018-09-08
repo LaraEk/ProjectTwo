@@ -1,5 +1,9 @@
 var db = require("../models");
 
+var Real_Pets = require("../models/real_pets");
+var Fantasy_Animals = require("../models/fantasy_animals");
+var Adoption_Form = require("../models/adoption_form");
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -19,6 +23,21 @@ module.exports = function(app) {
       });
     });
   });
+
+  app.get("/about", function(req, res) {
+    res.send("about.html");
+    });
+
+
+    app.get("/rescued", function(req, res) {
+      res.send("rescued.html");
+      });
+  
+    
+      app.get("/safety", function(req, res) {
+        res.send("petsafety.html");
+        });
+    
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
